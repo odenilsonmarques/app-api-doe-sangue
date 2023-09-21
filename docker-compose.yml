@@ -1,0 +1,74 @@
+version: "3.7"
+
+services:
+    # image project
+    app_doe_sangue:
+        build:
+            args:
+                user: doador
+                uid: 1000
+            context: .
+            dockerfile: Dockerfile
+        restart: always
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - redis
+        networks:
+            - net-doe-sangue
+
+    # nginx
+    nginx:
+        image: nginx:alpine
+        restart: always
+        ports: 
+            - "8389:80"
+        volumes: 
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks: 
+            - net-doe-sangue
+
+    # db mysql
+    mysql:
+        image: mysql:5.7.22
+        restart: always
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
+        volumes:
+            - ./.docker/mysql/dbdata:/var/lib/mysql
+        ports:
+            - "3384:3306"
+        networks:
+            - net-doe-sangue
+
+    # queue, basicamente a mesma configuração do primeiro serviço
+    queue:
+        build:
+            args:
+                user: odenilson
+                uid: 1000
+            context: ./
+            dockerfile: Dockerfile
+        restart: always
+        command: "php artisan queue:work"
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - redis
+        networks:
+            - net-doe-sangue
+
+    # redis
+    redis:
+        image: redis:latest
+        networks:
+            - net-doe-sangue
+
+networks:
+    net-doe-sangue:
+        driver: bridge
