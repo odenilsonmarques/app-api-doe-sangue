@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
@@ -27,7 +27,7 @@ class DonorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function createNewDonor(Request $request)
     {
         try {
 
@@ -50,9 +50,16 @@ class DonorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function getDonorByUuid($identify)
     {
-        //
+        try {
+            $donor = Donor::where('uuid', $identify)->firstOrFail();
+    
+            return response()->json(['donor' => $donor], 200);
+       
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Erro ao obter doador'], 500);
+        }
     }
 
     /**
@@ -66,8 +73,17 @@ class DonorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroyDonorByUiid(string $identify)
     {
-        //
+        try {
+            $donor = Donor::where('uuid', $identify)->firstOrFail();
+            $donor->delete();
+            return response()->json(['message' => 'Doador excluído com sucesso'], 200);
+       
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'Doador não encontrado'], 404);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Erro ao excluir doador'], 500);
+        }
     }
 }
