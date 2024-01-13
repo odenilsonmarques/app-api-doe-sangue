@@ -9,5 +9,19 @@ class Donor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['uuid', 'name', 'phone'];
+    protected $fillable =
+    [
+        'uuid',
+        'name',
+        'cpf',
+        'phone',
+        'date_birth',
+        'age',
+        'sex',
+        'address',
+        'profession',
+        'bllod_type',
+        'location',
+        'Photograph'
+    ];
 }
