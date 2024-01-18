@@ -24,4 +24,9 @@ class Donor extends Model
         'location',
         'Photograph'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

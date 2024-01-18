@@ -9,6 +9,13 @@ use App\Models\Donor;
 
 class DonorController extends Controller
 {
+
+    // To user any method this controller, the user has authenticate
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     /**
      * Display a listing of the resource.
      */
