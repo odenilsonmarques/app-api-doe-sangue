@@ -22,7 +22,8 @@ class Donor extends Model
         'profession',
         'bllod_type',
         'location',
-        'Photograph'
+        'Photograph',
+        'user_id',
     ];
 
     public function user()
