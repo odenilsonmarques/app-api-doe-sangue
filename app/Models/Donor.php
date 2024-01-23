@@ -30,4 +30,9 @@ class Donor extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function historics()
+    {
+        return $this->hasMany(Historic::class);
+    }
 }
