@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('donors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->uuid('uuid'); //esse atributo gera um sequencia de caracteres dinamicos para cada insert. optou-se por usá-lo ao inves de mostrar os id(primary key) de cada registro
             $table->string('name')->unique();
             $table->string('cpf')->unique();
