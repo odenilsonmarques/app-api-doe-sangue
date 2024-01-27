@@ -23,7 +23,6 @@ class Donor extends Model
         'bllod_type',
         'location',
         'Photograph',
-        'user_id',
     ];
 
    

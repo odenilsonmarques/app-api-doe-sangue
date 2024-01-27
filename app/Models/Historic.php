@@ -9,6 +9,13 @@ class Historic extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'uuid',
+        'quantity',
+        'bloodCenter',
+        'donor_id'
+    ];
+
 
     public function donor()
     {
