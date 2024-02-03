@@ -6,9 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\{
     DonorController,
     HistoricController,
+    BloodCenterController
 };
 use App\Models\Historic;
 
+
+//route to donors
 Route::get('/donors/alls',[DonorController::class,'getAllDonors']);
 
 Route::post('/donors',[DonorController::class,'createNewDonor']);
@@ -18,7 +21,18 @@ Route::get('/donors/{identify}', [DonorController::class, 'getDonorByUuid']);
 Route::delete('/donors/{identify}', [DonorController::class, 'destroyDonorByUiid']);
 
 
-Route::post('/donors/{donorUuid}/historics', [HistoricController::class, 'createHistoricForDonor']);
+//route boodcenter
+Route::get('/bloodCenters/alls',[BloodCenterController::class, 'getAllBloodCenter']);
+
+Route::post('/bloodCenters',[BloodCenterController::class, 'createNewBloodCenter']);
+
+
+
+//route historic
+
+
+
+Route::post('/donors/historics', [HistoricController::class, 'createHistoricForDonor']);
 
 
 

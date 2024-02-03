@@ -5,19 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Historic extends Model
+class Scheduling extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
+    protected $filleble = [
         'uuid',
-        'donation_date',
-        'quantity',
-        'donor_id'
+        'scheduling_date'
     ];
 
-    public function doador()
+    public function donor()
     {
         return $this->belongsTo(Donor::class);
+    }
+
+    public function blodCenter()
+    {
+        return $this->belongsTo(BloodCenter::class);
     }
 }

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('historics', function (Blueprint $table) {
+        Schema::create('schedulings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('donor_id')->constrained('donors')->onDelete('cascade')->onUpdate('cascade');
-            $table->uuid('uuid'); 
-            $table->string('quantity');
-            $table->string('bloodCenter')->nullable();
+            $table->foreignId('donor_id')->constrained('donors');
+            $table->foreignId('blood_center_id')->constrained('blood_centers');
+            $table->uuid('uuid');
+            $table->date('scheduling_date');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('historics');
+        Schema::dropIfExists('schedulings');
     }
 };
