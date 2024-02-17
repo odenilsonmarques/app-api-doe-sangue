@@ -28,11 +28,10 @@ class DonorController extends Controller
             return response()->json(['error' => 'Erro ao obter doadores'], 500);
         }
     }
-
     /**
      * Store a newly created resource in storage.
      */
-    public function createNewDonor(Request $request)
+    public function storeNewDonor(Request $request)
     {
         try {
             $request['uuid'] = Str::uuid(); // Gera um uuid dinamicamente usando a classe Str do Laravel, antes de inserir um registro
@@ -50,6 +49,8 @@ class DonorController extends Controller
             ], 500);
         }
     }
+
+
     
     /**
      * Display the specified resource.

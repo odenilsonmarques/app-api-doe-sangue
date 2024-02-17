@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Scheduling extends Model
 {
     use HasFactory;
-    protected $filleble = [
+    protected $fillable = [
         'uuid',
-        'scheduling_date'
+        'scheduling_date',
+        'donor_id',
+        'blood_center_id'
     ];
 
     public function donor()
