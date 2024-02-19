@@ -28,6 +28,11 @@ class DonorController extends Controller
             return response()->json(['error' => 'Erro ao obter doadores'], 500);
         }
     }
+
+    public function create()
+    {
+        return view('donor.create');
+    }
     /**
      * Store a newly created resource in storage.
      */
