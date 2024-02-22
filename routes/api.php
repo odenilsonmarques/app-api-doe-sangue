@@ -16,7 +16,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Telescope\Http\Controllers\ScheduleController;
 
 //route to donors
-Route::get('/donors/alls',[DonorController::class,'getAllDonors']);
+Route::get('/donors/alls',[DonorController::class,'getAllDonors'])->name('donors.getAllDonors');
 Route::post('/donors',[DonorController::class,'storeNewDonor'])->name('donors.storeNewDonor');
 Route::get('/donors/create',[DonorController::class,'create'])->name('donors.create');
 Route::get('/donors/{identify}', [DonorController::class,'getDonorByUuid']);

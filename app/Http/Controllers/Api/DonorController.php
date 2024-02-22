@@ -23,7 +23,9 @@ class DonorController extends Controller
     {
         try {
             $donors = Donor::all();
-            return response()->json(['donors' => $donors], 200);
+            // dd($donors);
+            // return response()->json(['donors' => $donors], 200);
+            return view('donor.index',compact('donors'));
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter doadores'], 500);
         }
