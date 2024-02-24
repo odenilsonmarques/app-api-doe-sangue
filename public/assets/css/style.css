@@ -1,18 +1,30 @@
 
-#background-form{
+.txt-logo{
+    color:#B00C0C;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+
+.background-page{
     background-color:#C0C0C0;
     padding: 30px;
-    border:1px solid #942828;
+    border:1px solid #B00C0C;
 }
 
 .btn-form-donor{
     background-color: #E9E9EA;
     color: #111;
     font-weight: bold;
-    border:1px solid #942828;
+    border:1px solid #B00C0C;
 }
 
 .title-form-donors{
     font-size: 20px;
-    color:#942828;
+    color:#B00C0C;
+}
+
+.header-table{
+    background-color:#B00C0C;
+    color: #fff;
 }

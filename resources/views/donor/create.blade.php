@@ -15,7 +15,7 @@
 
             </h1>
             <div class="col-lg-12">
-                <div id="background-form">
+                <div class="background-page">
                     <form action="{{ route('donors.storeNewDonor') }}" method="POST">
                         @csrf
                         <div class="row mb-3">
