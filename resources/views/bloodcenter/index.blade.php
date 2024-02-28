@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title', 'Doadores')
+@section('title', 'Hemocentro')
 
 @section('content')
     <div class="container">
@@ -8,17 +8,16 @@
 
                 
                 <button type="button" class="btn btn-sm btn-new-donor mt-5">
-                    <a href="{{route('donors.create')}}">Novo</a>
+                    <a href="{{route('bloodcenters.create')}}">Novo</a>
                 </button>
                 <div class="table-responsive mt-2">
                     <table class="table table table-hover">
                         <thead class="table header-table">
                             <tr>
                                 <th>Nome</th>
-                                <th>Tipo sanguíneo</th>
-                                <th>Idade</th>
-                                <th>Telefone</th>
                                 <th>Email</th>
+                                <th>Telefone</th>
+                                <th>Cidade</th>
                                 <th>Data do cadastro</th>
                                 <th>
                                     Ações
@@ -26,15 +25,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($donors as $donor)
-                                <td>{{ $donor->name }}</td>
-                                <td>{{ $donor->blood_type }}</td>
-                                <td>{{ $donor->age }}</td>
-                                <td>{{ $donor->phone_one }}</td>
-
-                                <td>{{ $donor->email }}</td>
-
-                                <td>{{ date('d/m/Y', strtotime($donor->created_at)) }}</td>
+                            @foreach ($bloodCenters as $bloodCenter)
+                                <td>{{ $bloodCenter->name }}</td>
+                                <td>{{ $bloodCenter->email }}</td>
+                                <td>{{ $bloodCenter->phone }}</td>
+                                <td>{{ $bloodCenter->city }}</td>
+                                <td>{{ date('d/m/Y', strtotime($bloodCenter->created_at)) }}</td>
                                 <td>
                                     <a href="#" title="Editar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

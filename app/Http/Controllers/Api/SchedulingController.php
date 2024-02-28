@@ -22,6 +22,14 @@ class SchedulingController extends Controller
         }
     }
 
+    public function create()
+    {
+        $bloodCenters = BloodCenter::all();
+        // dd($bloodCenters);
+        return view('scheduling.create', compact('bloodCenters'));
+    }
+
+
     public function createNewScheduling(Request $request)
     {
         try {

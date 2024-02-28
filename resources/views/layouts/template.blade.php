@@ -13,7 +13,7 @@
 
 <body>
     <header class="mb-5">
-        <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:#fff">
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="{{asset('assets/img/logo.png')}}" alt="" width="40px" height="40px"><br>
@@ -28,13 +28,13 @@
                             <a class="nav-link" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Fornecedor</a>
+                            <a class="nav-link" href="{{route('donors.getAllDonors')}}">Doadores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produto</a>
+                            <a class="nav-link" href="{{route('bloodcenters.getAllBloodCenter')}}">Hemocentros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Saida de produto</a>
+                            <a class="nav-link" href="#">Agendamento</a>
                         </li>
                     </ul>
                 </nav>
