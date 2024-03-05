@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('schedulings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('donor_id')->constrained('donors');
-            $table->foreignId('blood_center_id')->constrained('blood_centers');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('blood_center_id')->constrained('blood_centers')->onDelete('cascade')->onUpdate('cascade');
             $table->uuid('uuid');
+            $table->string('phone')->unique();
+            $table->string('blood_type')->nullable();
             $table->date('scheduling_date');
             $table->timestamps();
         });

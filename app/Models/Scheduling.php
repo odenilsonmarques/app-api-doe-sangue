@@ -11,13 +11,14 @@ class Scheduling extends Model
     protected $fillable = [
         'uuid',
         'scheduling_date',
-        'donor_id',
-        'blood_center_id'
+        'phone',
+        'blood_type'
+
     ];
 
-    public function donor()
+    public function user()
     {
-        return $this->belongsTo(Donor::class);
+        return $this->belongsTo(User::class);
     }
 
     public function blodCenter()

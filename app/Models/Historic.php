@@ -13,11 +13,13 @@ class Historic extends Model
         'uuid',
         'donation_date',
         'quantity',
-        'donor_id'
     ];
 
-    public function doador()
+    public function user()
     {
-        return $this->belongsTo(Donor::class);
+        return $this->belongsTo(User::class);
     }
+
+
+   
 }

@@ -29,18 +29,4 @@ class Donor extends Model
         'phone_two'
     ];
 
-
-
-        
-
-    public function schedulings()
-    {
-        return $this->hasMany(Scheduling::class);
-    }
-
-    public function historics()
-    {
-        return $this->hasMany(Historic::class);
-    }
-
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('historics', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('donor_id')->constrained('donors');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->date('donation_date');
             $table->string('quantity');
             $table->timestamps();

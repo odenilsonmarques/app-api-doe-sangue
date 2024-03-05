@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scheduling;
-use App\Models\Donor;
+use App\Models\User;
 use App\Models\BloodCenter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -33,8 +33,8 @@ class SchedulingController extends Controller
     public function createNewScheduling(Request $request)
     {
         try {
-            $donorUuid = $request->input('donor_uuid');
-            $donor = Donor::where('uuid', $donorUuid)->firstOrFail();
+            $userId = $request->input('user_id');
+            $user = User::where('id', $userId)->firstOrFail();
 
             $bloodCenterUuid = $request->input('blood_center_uuid');
             $bloodCenter = BloodCenter::where('uuid', $bloodCenterUuid)->firstOrFail();
@@ -42,13 +42,13 @@ class SchedulingController extends Controller
             $request['uuid'] = Str::uuid();
 
             // Crie o novo agendamento associado ao doador e ao hemocentro
-            $scheduling = $donor->schedulings()->create([
+            $scheduling = $user->schedulings()->create([
 
 
                 //nesse caso esrou passando todos os dados pois nao usei create::all(), devido esta trabakhando com mais de um relacionamnto
                 'uuid' => $request->uuid,
                 'scheduling_date' =>$request->scheduling_date,
-                'donor_id' => $donor->id,
+                'user_id' => $user->id,
                 'blood_center_id' => $bloodCenter->id,
             ]);
 
