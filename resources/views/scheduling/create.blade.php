@@ -15,8 +15,14 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="name"></label>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Nome" autofocus>
+                                    <select name="user_id" class="form-select" required>
+                                        <option value="">Selecione</option>
+                                        @foreach ($users as $user)
+                                            <option value="{{ $user['id'] }}"
+                                                {{ old('user_id') == $user['id'] ? 'selected' : '' }}>
+                                                {{ $user['name'] }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -26,11 +32,11 @@
                                 <div class="row">
                                     <div class="col-lg-12 mb-3">
                                         <label for="name" class="form-label">Selecione o hemocentro</label>
-                                        <select name="supplier_id" class="form-select" required>
+                                        <select name="blood_center_id" class="form-select" required>
                                             <option value="">Selecione</option>
                                             @foreach ($bloodCenters as $bloodCenter)
                                                 <option value="{{ $bloodCenter['id'] }}"
-                                                    {{ old('supplier_id') == $bloodCenter['id'] ? 'selected' : '' }}>
+                                                    {{ old('blood_center_id') == $bloodCenter['id'] ? 'selected' : '' }}>
                                                     {{ $bloodCenter['name'] }}</option>
                                             @endforeach
                                         </select>
@@ -43,11 +49,36 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="scheduling_date"></label>
-                                    <small id="dateOfBirthHelp" class="form-text text-muted">Por favor, informe sua data do sua doação
-                                </small>
+                                    <small id="dateOfBirthHelp" class="form-text text-muted">Por favor, informe sua data do
+                                        sua doação
+                                    </small>
                                     <input type="date" class="form-control" id="scheduling_date" name="scheduling_date"
                                         placeholder="" autofocus>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="blood_type"></label>
+                                <select class="form-select" id="blood_type" name="blood_type">
+                                    <option selected>Tipo sanguíneo</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="phone_one"></label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone 1">
                             </div>
                         </div>
 

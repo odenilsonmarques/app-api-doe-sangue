@@ -34,7 +34,7 @@
                             <a class="nav-link" href="{{route('bloodcenters.getAllBloodCenter')}}">Hemocentros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Agendamento</a>
+                            <a class="nav-link" href="{{route('schedulings.getAllScheduling')}}">Agendamento</a>
                         </li>
                     </ul>
                 </nav>

@@ -12,8 +12,9 @@ class Scheduling extends Model
         'uuid',
         'scheduling_date',
         'phone',
-        'blood_type'
-
+        'blood_type',
+        'user_id',
+        'blood_center_id'
     ];
 
     public function user()
@@ -21,7 +22,7 @@ class Scheduling extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function blodCenter()
+    public function bloodCenter()
     {
         return $this->belongsTo(BloodCenter::class);
     }

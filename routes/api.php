@@ -30,7 +30,7 @@ Route::get('/bloodcenters/create',[BloodCenterController::class,'create'])->name
 
 
 //route scheduling
-Route::get('/schedulings/alls',[SchedulingController::class,'getAllScheduling']);
+Route::get('/schedulings/alls',[SchedulingController::class,'getAllScheduling'])->name('schedulings.getAllScheduling');
 Route::post('/schedulings',[SchedulingController::class,'createNewScheduling'])->name('schedulings.createNewScheduling');
 Route::get('/schedulings/create',[SchedulingController::class,'create'])->name('schedulings.create');
 
