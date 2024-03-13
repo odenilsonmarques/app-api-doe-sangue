@@ -16,25 +16,30 @@ use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Telescope\Http\Controllers\ScheduleController;
 
 //route to donors
-Route::get('/donors/alls',[DonorController::class,'getAllDonors']);
-Route::post('/donors',[DonorController::class,'createNewDonor']);
+Route::get('/donors/alls',[DonorController::class,'getAllDonors'])->name('donors.getAllDonors');
+Route::post('/donors',[DonorController::class,'storeNewDonor'])->name('donors.storeNewDonor');
+Route::get('/donors/create',[DonorController::class,'create'])->name('donors.create');
 Route::get('/donors/{identify}', [DonorController::class,'getDonorByUuid']);
 Route::delete('/donors/{identify}', [DonorController::class,'destroyDonorByUiid']);
 
 
-//route boodcenter
-Route::get('/bloodCenters/alls',[BloodCenterController::class,'getAllBloodCenter']);
-Route::post('/bloodCenters',[BloodCenterController::class,'createNewBloodCenter']);
+//route boodcenter. depois alterar o name da rota para o padrao como donos
+Route::get('/bloodcenters/alls',[BloodCenterController::class,'getAllBloodCenter'])->name('bloodcenters.getAllBloodCenter');
+Route::post('/bloodcenters',[BloodCenterController::class,'createNewBloodCenter'])->name('bloodcenters.storeNewBloodCenter');
+Route::get('/bloodcenters/create',[BloodCenterController::class,'create'])->name('bloodcenters.create');
 
 
 //route scheduling
-Route::get('/schedulings/alls',[SchedulingController::class,'getAllScheduling']);
-Route::post('/schedulings',[SchedulingController::class,'createNewScheduling']);
-
+Route::get('/schedulings/alls',[SchedulingController::class,'getAllScheduling'])->name('schedulings.getAllScheduling');
+Route::post('/schedulings',[SchedulingController::class,'createNewScheduling'])->name('schedulings.createNewScheduling');
+Route::get('/schedulings/create',[SchedulingController::class,'create'])->name('schedulings.create');
 
 
 //route historic
-Route::post('/donors/historics',[HistoricController::class,'createHistoricForDonor']);
+Route::get('/historics/alls',[HistoricController::class,'getAllHistoric'])->name('historics.getAllHistoric');
+Route::post('/historics',[HistoricController::class,'createNewHistoric'])->name('historics.createNewHistoric');
+Route::get('/historics/create',[HistoricController::class,'create'])->name('historics.create');
+
 
 
 

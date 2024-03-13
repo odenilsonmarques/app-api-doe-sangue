@@ -12,12 +12,19 @@ class BloodCenterController extends Controller
     public function getAllBloodCenter()
     {
         try {
-            $blooCenters = BloodCenter::all();
-            return response()->json(['bloodCenters' => $blooCenters], 200);
+            $bloodCenters = BloodCenter::all();
+            // return response()->json(['bloodCenters' => $bloodCenters], 200);
+            return view('bloodcenter.index', compact('bloodCenters'));
         } catch (\Exception $e) {
 
             return response()->json(['error' => 'Erro ao obter hemocentro'], 500);
         }
+    }
+
+
+    public function create()
+    {
+        return view('bloodcenter.create');
     }
 
     public function createNewBloodCenter(Request $request)
@@ -30,6 +37,7 @@ class BloodCenterController extends Controller
                 'message' => 'Hemocentro criado com sucesso',
                 'data'    => $bloodCenters,
             ], 201);
+
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,

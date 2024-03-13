@@ -11,17 +11,25 @@ class Scheduling extends Model
     protected $fillable = [
         'uuid',
         'scheduling_date',
-        'donor_id',
+        'phone',
+        'blood_type',
+        'user_id',
         'blood_center_id'
     ];
 
-    public function donor()
+    public function user()
     {
-        return $this->belongsTo(Donor::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function blodCenter()
+    public function bloodCenter()
     {
         return $this->belongsTo(BloodCenter::class);
     }
+
+    public function historics()
+    {
+        return $this->hasMany(Historic::class);
+    }
+    
 }

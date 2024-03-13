@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('historics', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->foreignId('donor_id')->constrained('donors');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('blood_center_id')->constrained('blood_centers')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('scheduling_id')->constrained('schedulings')->onDelete('cascade')->onUpdate('cascade');
             $table->date('donation_date');
-            $table->string('quantity');
+            $table->string('quantity_blood');
             $table->timestamps();
         });
     }

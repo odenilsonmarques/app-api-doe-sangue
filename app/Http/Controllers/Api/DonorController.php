@@ -23,10 +23,17 @@ class DonorController extends Controller
     {
         try {
             $donors = Donor::all();
-            return response()->json(['donors' => $donors], 200);
+            // dd($donors);
+            // return response()->json(['donors' => $donors], 200);
+            return view('donor.index',compact('donors'));
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter doadores'], 500);
         }
+    }
+
+    public function create()
+    {
+        return view('donor.create');
     }
     /**
      * Store a newly created resource in storage.

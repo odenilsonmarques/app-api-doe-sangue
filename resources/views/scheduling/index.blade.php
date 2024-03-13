@@ -8,33 +8,31 @@
 
                 
                 <button type="button" class="btn btn-sm btn-new-donor mt-5">
-                    <a href="{{route('donors.create')}}">Novo</a>
+                    <a href="{{route('schedulings.create')}}">Novo</a>
                 </button>
                 <div class="table-responsive mt-2">
                     <table class="table table table-hover">
                         <thead class="table header-table">
                             <tr>
                                 <th>Nome</th>
-                                <th>Tipo sanguíneo</th>
-                                <th>Idade</th>
+                                <th>Tipo sanguineo</th>
                                 <th>Telefone</th>
                                 <th>Email</th>
-                                <th>Data do cadastro</th>
+                                <th>Data do agendamento</th>
+                                <th>Hemocentro</th>
                                 <th>
                                     Ações
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($donors as $donor)
-                                <td>{{ $donor->name }}</td>
-                                <td>{{ $donor->blood_type }}</td>
-                                <td>{{ $donor->age }}</td>
-                                <td>{{ $donor->phone_one }}</td>
-
-                                <td>{{ $donor->email }}</td>
-
-                                <td>{{ date('d/m/Y', strtotime($donor->created_at)) }}</td>
+                            @foreach ($schedulings as $scheduling)
+                                <td>{{ $scheduling->user->name }}</td>
+                                <td>{{ $scheduling->blood_type }}</td>
+                                <td>{{ $scheduling->phone}}</td>
+                                <td>{{ $scheduling->user->email }}</td>
+                                <td>{{ $scheduling->scheduling_date}}</td>
+                                <td>{{ $scheduling->bloodCenter->name }}</td>
                                 <td>
                                     <a href="#" title="Editar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

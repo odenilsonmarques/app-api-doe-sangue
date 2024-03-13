@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scheduling;
-use App\Models\Donor;
+use App\Models\User;
 use App\Models\BloodCenter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -16,34 +16,56 @@ class SchedulingController extends Controller
     {
         try {
             $schedulings = Scheduling::all();
-            return response()->json(['schedulings' => $schedulings], 200);
+            // return response()->json(['schedulings' => $schedulings], 200);
+
+            // dd($schedulings);
+            return view('scheduling.index',compact('schedulings'));
+
+
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter agendamento'], 500);
         }
     }
 
+    public function create()
+    {
+        $bloodCenters = BloodCenter::all();
+        $users = User::all();
+        // dd($bloodCenters);
+        return view('scheduling.create', compact('bloodCenters', 'users'));
+    }
+
+
     public function createNewScheduling(Request $request)
     {
+        
         try {
-            $donorUuid = $request->input('donor_uuid');
-            $donor = Donor::where('uuid', $donorUuid)->firstOrFail();
+            // dd($request->all()); 
+            $userId = $request->input('user_id');
+            $user = User::where('id', $userId)->firstOrFail();
 
-            $bloodCenterUuid = $request->input('blood_center_uuid');
-            $bloodCenter = BloodCenter::where('uuid', $bloodCenterUuid)->firstOrFail();
+            $bloodCenterId = $request->input('blood_center_id');
+            $bloodCenter = BloodCenter::where('id', $bloodCenterId)->firstOrFail();
+
+            // dd($user, $bloodCenter);
 
             $request['uuid'] = Str::uuid();
 
-            // Crie o novo agendamento associado ao doador e ao hemocentro
-            $scheduling = $donor->schedulings()->create([
-
+            // Crie o novo agendamento associado ao usuário e ao hemocentro
+            $scheduling = $user->schedulings()->create([
+               
 
                 //nesse caso esrou passando todos os dados pois nao usei create::all(), devido esta trabakhando com mais de um relacionamnto
                 'uuid' => $request->uuid,
                 'scheduling_date' =>$request->scheduling_date,
-                'donor_id' => $donor->id,
+                'phone' => $request->phone,
+                'blood_type' => $request->blood_type,
+                'user_id' => $user->id,
                 'blood_center_id' => $bloodCenter->id,
+               
             ]);
 
+           
             return response()->json([
                 'success' => true,
                 'message' => 'Agendamento criado com sucesso',

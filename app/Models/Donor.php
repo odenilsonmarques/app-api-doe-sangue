@@ -15,25 +15,18 @@ class Donor extends Model
         'uuid',
         'name',
         'cpf',
-        'phone',
-        'date_birth',
         'age',
+        'date_birth',
+        'blood_type',
         'sex',
-        'address',
         'profession',
-        'bllod_type',
-        'location',
-        'Photograph',
+        'email',
+        'address',
+        'complement',
+        'cep',
+        'neighborhood',
+        'phone_one',
+        'phone_two'
     ];
-
-    public function schedulings()
-    {
-        return $this->hasMany(Scheduling::class);
-    }
-
-    public function historics()
-    {
-        return $this->hasMany(Historic::class);
-    }
 
 }
