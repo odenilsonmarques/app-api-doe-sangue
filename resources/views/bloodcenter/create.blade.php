@@ -4,11 +4,11 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1 class="mt-5 title-form-donors">
-                Cadastro de hemocentro
-            </h1>
             <div class="col-lg-12">
-                <div class="background-pHorário">
+                <h1 class="mt-5 title-form-donors">
+                    Cadastro de hemocentro
+                </h1>
+                <div class="background-page">
                     <form action="{{ route('bloodcenters.storeNewBloodCenter') }}" method="POST">
                         @csrf
                         <div class="row mb-3">

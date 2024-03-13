@@ -6,16 +6,16 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="mt-5 title-form-donors">
-                    Agendamento
+                    Registro de doação
                 </h1>
                 <div class="background-page">
-                    <form action="{{ route('schedulings.createNewScheduling') }}" method="POST">
+                    <form action="{{ route('historics.createNewHistoric') }}" method="POST">
                         @csrf
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="name"></label>
-                                    <select name="user_id" class="form-select" required>
+                                    <label for="name">Doador</label>
+                                    <select name="user_id" class="form-select" required autofocus>
                                         <option value="">Selecione</option>
                                         @foreach ($users as $user)
                                             <option value="{{ $user['id'] }}"
@@ -27,60 +27,43 @@
                             </div>
                         </div>
 
-                        <div class="row mb-2">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-lg-12 mb-3">
-                                        <label for="name" class="form-label">Selecione o hemocentro</label>
-                                        <select name="blood_center_id" class="form-select" required>
-                                            <option value="">Selecione</option>
-                                            @foreach ($bloodCenters as $bloodCenter)
-                                                <option value="{{ $bloodCenter['id'] }}"
-                                                    {{ old('blood_center_id') == $bloodCenter['id'] ? 'selected' : '' }}>
-                                                    {{ $bloodCenter['name'] }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="scheduling_date"></label>
-                                    <small id="dateOfBirthHelp" class="form-text text-muted">Por favor, informe sua data do
-                                        sua doação
-                                    </small>
-                                    <input type="date" class="form-control" id="scheduling_date" name="scheduling_date"
-                                        placeholder="" autofocus>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="blood_type"></label>
-                                    <select class="form-select" id="blood_type" name="blood_type">
-                                        <option selected>Tipo sanguíneo</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                    </select>
-                                </div>
+                                <label for="blood_type">Tipo sanguineo</label>
+                                <select name="scheduling_id" class="form-select" required>
+                                    <option value="">Selecione</option>
+                                    @foreach ($schedulings as $scheduling)
+                                        <option value="{{ $scheduling['id'] }}"
+                                            {{ old('scheduling_id') == $scheduling['id'] ? 'selected' : '' }}>
+                                            {{ $scheduling['blood_type'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="col-md-6">
+                                <label for="quantity_blood">Quantidade de sangue</label>
+                                <input type="number" class="form-control" id="quantity_blood" name="quantity_blood" min="1"
+                                    placeholder="Quantidade de sangue">
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-md-6 ">
+                                <label for="name">Hemocentro</label>
+                                <select name="blood_center_id" class="form-select" required>
+                                    <option value="">Selecione</option>
+                                    @foreach ($bloodCenters as $bloodCenter)
+                                        <option value="{{ $bloodCenter['id'] }}"
+                                            {{ old('blood_center_id') == $bloodCenter['id'] ? 'selected' : '' }}>
+                                            {{ $bloodCenter['name'] }}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="phone_one"></label>
-                                    <input type="text" class="form-control" id="phone" name="phone"
-                                        placeholder="Telefone 1">
+                                    <label for="donation_date">Data da doação</label>
+                                    <input type="date" class="form-control" id="donation_date" name="donation_date" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +71,6 @@
 
                         <div class="row mb-3 mt-5">
                             <div class="col-md-12 text-center">
-
                                 <button type="submit" class="btn btn-secondary mx-2 btn-form-donor">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="red"
                                         class="bi bi-floppy" viewBox="0 0 16 16">

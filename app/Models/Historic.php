@@ -12,12 +12,25 @@ class Historic extends Model
     protected $fillable = [
         'uuid',
         'donation_date',
-        'quantity',
+        'quantity_blood',
+        'user_id',
+        'blood_center_id',
+        'scheduling_id'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function scheduling()
+    {
+        return $this->belongsTo(Scheduling::class);
+    }
+
+    public function bloodCenter()
+    {
+        return $this->belongsTo(BloodCenter::class);
     }
 
 

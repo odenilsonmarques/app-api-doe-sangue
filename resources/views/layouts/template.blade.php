@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('schedulings.getAllScheduling')}}">Agendamento</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('historics.getAllHistoric')}}">Registrar doação</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

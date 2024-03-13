@@ -51,10 +51,9 @@ class SchedulingController extends Controller
 
             $request['uuid'] = Str::uuid();
 
-            // Crie o novo agendamento associado ao doador e ao hemocentro
+            // Crie o novo agendamento associado ao usuário e ao hemocentro
             $scheduling = $user->schedulings()->create([
                
-                
 
                 //nesse caso esrou passando todos os dados pois nao usei create::all(), devido esta trabakhando com mais de um relacionamnto
                 'uuid' => $request->uuid,

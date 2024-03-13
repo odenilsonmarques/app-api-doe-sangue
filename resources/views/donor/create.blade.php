@@ -4,10 +4,10 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1 class="mt-5 title-form-donors">
-                Cadastro de doadores
-            </h1>
             <div class="col-lg-12">
+                <h1 class="mt-5 title-form-donors">
+                    Cadastro de doadores
+                </h1>
                 <div class="background-page">
                     <form action="{{ route('donors.storeNewDonor') }}" method="POST">
                         @csrf
@@ -110,28 +110,32 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="cep"></label>
-                                    <input type="text" class="form-control" id="cep" name="cep" placeholder="cep">
+                                    <input type="text" class="form-control" id="cep" name="cep"
+                                        placeholder="cep">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="neighborhood"></label>
-                                    <input type="text" class="form-control" id="neighborhood" name="neighborhood" placeholder="Bairro">
+                                    <input type="text" class="form-control" id="neighborhood" name="neighborhood"
+                                        placeholder="Bairro">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="phone_one"></label>
-                                    <input type="text" class="form-control" id="phone_one" name="phone_one" placeholder="Telefone 1">
+                                    <input type="text" class="form-control" id="phone_one" name="phone_one"
+                                        placeholder="Telefone 1">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="phone_two"></label>
-                                    <input type="text" class="form-control" id="phone_two" name="phone_two" placeholder="Telefone 2">
+                                    <input type="text" class="form-control" id="phone_two" name="phone_two"
+                                        placeholder="Telefone 2">
                                 </div>
                             </div>
                         </div>

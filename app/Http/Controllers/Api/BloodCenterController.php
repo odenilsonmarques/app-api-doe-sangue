@@ -13,8 +13,8 @@ class BloodCenterController extends Controller
     {
         try {
             $bloodCenters = BloodCenter::all();
-            return response()->json(['bloodCenters' => $bloodCenters], 200);
-            // return view('bloodcenter.index', compact('bloodCenters'));
+            // return response()->json(['bloodCenters' => $bloodCenters], 200);
+            return view('bloodcenter.index', compact('bloodCenters'));
         } catch (\Exception $e) {
 
             return response()->json(['error' => 'Erro ao obter hemocentro'], 500);

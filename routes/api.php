@@ -35,9 +35,11 @@ Route::post('/schedulings',[SchedulingController::class,'createNewScheduling'])-
 Route::get('/schedulings/create',[SchedulingController::class,'create'])->name('schedulings.create');
 
 
-
 //route historic
-Route::post('/donors/historics',[HistoricController::class,'createHistoricForDonor']);
+Route::get('/historics/alls',[HistoricController::class,'getAllHistoric'])->name('historics.getAllHistoric');
+Route::post('/historics',[HistoricController::class,'createNewHistoric'])->name('historics.createNewHistoric');
+Route::get('/historics/create',[HistoricController::class,'create'])->name('historics.create');
+
 
 
 

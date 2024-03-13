@@ -26,4 +26,10 @@ class Scheduling extends Model
     {
         return $this->belongsTo(BloodCenter::class);
     }
+
+    public function historics()
+    {
+        return $this->hasMany(Historic::class);
+    }
+    
 }
