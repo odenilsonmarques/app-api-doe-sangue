@@ -26,6 +26,10 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- <input type="hidden" name="user_id" value="{{ Auth::user()}}"> --}}
+
+
+                        
 
                         <div class="row mb-2">
                             <div class="col-md-12">

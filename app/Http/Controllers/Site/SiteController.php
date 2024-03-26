@@ -11,4 +11,9 @@ class SiteController extends Controller
     {
         return view('site.index');
     }
+
+    public function start()
+    {
+        return view('site.start');
+    }
 }

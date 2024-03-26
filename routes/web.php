@@ -14,11 +14,14 @@ use App\Http\Controllers\Site\SiteController;
 |
 */
 
-Route::get('/', [SiteController::class, 'index'])->name('index');
+// Route::get('/', [SiteController::class, 'index'])->name('index');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Route::get('/inicio',[SiteController::class, 'start'])->name('start.inicio');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
