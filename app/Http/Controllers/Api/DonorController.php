@@ -10,22 +10,13 @@ use App\Models\Donor;
 class DonorController extends Controller
 {
 
-    // To user any method this controller, the user has authenticate
-    // public function __construct()
-    // {
-    //     $this->middleware(['auth']);
-    // }
-
-    /**
-     * Display a listing of the resource.
-     */
     public function getAllDonors()
     {
         try {
             $donors = Donor::all();
             // dd($donors);
-            // return response()->json(['donors' => $donors], 200);
-            return view('donor.index',compact('donors'));
+            return response()->json(['donors' => $donors], 200);
+            // return view('donor.index',compact('donors'));
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter doadores'], 500);
         }
@@ -35,9 +26,7 @@ class DonorController extends Controller
     {
         return view('donor.create');
     }
-    /**
-     * Store a newly created resource in storage.
-     */
+   
     public function storeNewDonor(Request $request)
     {
         try {
@@ -57,11 +46,6 @@ class DonorController extends Controller
         }
     }
 
-
-    
-    /**
-     * Display the specified resource.
-     */
     public function getDonorByUuid($identify)
     {
         try {

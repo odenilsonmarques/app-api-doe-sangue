@@ -28,7 +28,7 @@
                             <a class="nav-link" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('donors.getAllDonors')}}">Doadores</a>
+                            <a class="nav-link" href="#">Doadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('bloodcenters.getAllBloodCenter')}}">Hemocentros</a>

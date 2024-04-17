@@ -12,16 +12,6 @@ use Illuminate\Http\Request;
 
 class HistoricController extends Controller
 {
-    public function create()
-    {
-        $users = User::all();
-        $bloodCenters = BloodCenter::all();
-        $schedulings = Scheduling::all();
-      
-        // dd($users,$bloodCenters,$historics);
-        return view('historics.create', compact( 'users','bloodCenters','schedulings'));
-    }
-
     public function getAllHistoric()
     {
         try {
@@ -32,6 +22,16 @@ class HistoricController extends Controller
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter agendamento'], 500);
         }
+    }
+
+    public function create()
+    {
+        $users = User::all();
+        $bloodCenters = BloodCenter::all();
+        $schedulings = Scheduling::all();
+      
+        // dd($users,$bloodCenters,$historics);
+        return view('historics.create', compact( 'users','bloodCenters','schedulings'));
     }
 
     public function createNewHistoric(Request $request)

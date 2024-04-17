@@ -16,12 +16,8 @@ class SchedulingController extends Controller
     {
         try {
             $schedulings = Scheduling::all();
-            // return response()->json(['schedulings' => $schedulings], 200);
-
-            // dd($schedulings);
-            return view('scheduling.index',compact('schedulings'));
-
-
+            return response()->json(['schedulings' => $schedulings], 200);
+            // return view('scheduling.index',compact('schedulings'));
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter agendamento'], 500);
         }
@@ -38,7 +34,7 @@ class SchedulingController extends Controller
 
     public function createNewScheduling(Request $request)
     {
-        
+
         try {
             // dd($request->all()); 
             $userId = $request->input('user_id');
@@ -47,25 +43,20 @@ class SchedulingController extends Controller
             $bloodCenterId = $request->input('blood_center_id');
             $bloodCenter = BloodCenter::where('id', $bloodCenterId)->firstOrFail();
 
-            // dd($user, $bloodCenter);
-
             $request['uuid'] = Str::uuid();
 
             // Crie o novo agendamento associado ao usuário e ao hemocentro
             $scheduling = $user->schedulings()->create([
-               
 
                 //nesse caso esrou passando todos os dados pois nao usei create::all(), devido esta trabakhando com mais de um relacionamnto
                 'uuid' => $request->uuid,
-                'scheduling_date' =>$request->scheduling_date,
+                'scheduling_date' => $request->scheduling_date,
                 'phone' => $request->phone,
                 'blood_type' => $request->blood_type,
                 'user_id' => $user->id,
                 'blood_center_id' => $bloodCenter->id,
-               
-            ]);
 
-           
+            ]);
             return response()->json([
                 'success' => true,
                 'message' => 'Agendamento criado com sucesso',
