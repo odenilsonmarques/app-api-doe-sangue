@@ -28,16 +28,28 @@
                             <a class="nav-link" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('donors.getAllDonors')}}">Doadores</a>
+                            <a class="nav-link" href="#">Doadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('bloodcenters.getAllBloodCenter')}}">Hemocentros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('schedulings.getAllScheduling')}}">Agendamento</a>
-                        </li>
+                        </li>  <li class="nav-item">
+                            <a class="nav-link" href="{{route('login')}}">Logar</a>
+                        </li> 
+
+
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('historics.getAllHistoric')}}">Registrar doação</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+    
+                                <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </form>
                         </li>
                     </ul>
                 </nav>
