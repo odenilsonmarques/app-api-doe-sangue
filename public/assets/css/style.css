@@ -50,6 +50,18 @@
     text-decoration: none;
 }  
 
-hero{
+.hero-text h1{
+    color:#B00C0C;
     
+}
+
+.hero-text p{
+    color:#111;
+    font-weight: bold;
+}
+
+.texts-features h5 a{ 
+    color:#B00C0C;
+    text-decoration: none;
+
 }

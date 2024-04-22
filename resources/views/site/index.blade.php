@@ -25,7 +25,12 @@
             <div class="col mt-5 show-card">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mt-3"><a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Agendar doação criando uma conta</a></h5>
+                        <h5 class="card-title mt-3">
+                            <a href="{{ route('register') }}"
+                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                                Agendar criando uma conta
+                            </a>
+                        </h5>
                     </div>
                     <div class="card-body">
                         <ul class="">
@@ -40,7 +45,9 @@
             <div class="col mt-5 show-card">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mt-3"><a href="{{ route('login') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ja tem uma conta, acesse aqui</a></h5>
+                        <h5 class="card-title mt-3"><a href="{{ route('login') }}"
+                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ja
+                                tem uma conta, acesse aqui</a></h5>
                     </div>
                     <div class="card-body">
                         <ul class="">
@@ -55,7 +62,7 @@
             <div class="col  mt-5 show-card">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title mt-3">Agendar doação sem criar uma conta</h5>
+                        <h5 class="card-title mt-3">Agendar sem criar uma conta</h5>
                     </div>
                     <div class="card-body">
                         <ul class="">

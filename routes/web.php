@@ -15,7 +15,7 @@ use App\Http\Controllers\Site\{
 };
 
 
-// Route::get('/', [SiteController::class, 'index'])->name('index');
+Route::get('/', [SiteController::class, 'index'])->name('index');
 
 // Route::get('/dashboard',[ControllerDashboard::class,'index'])->name('dashboard.index');
 
