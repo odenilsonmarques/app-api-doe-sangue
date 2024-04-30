@@ -4,7 +4,7 @@
 
     <form method="POST" action="{{ route('login') }}">
        
-        dd(@csrf);
+        @csrf
 
         <!-- Email Address -->
         <div>

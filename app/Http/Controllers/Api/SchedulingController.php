@@ -10,14 +10,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Psy\CodeCleaner\ReturnTypePass;
 
+
 class SchedulingController extends Controller
 {
     public function getAllScheduling()
     {
         try {
             $schedulings = Scheduling::all();
-            return response()->json(['schedulings' => $schedulings], 200);
-            // return view('scheduling.index',compact('schedulings'));
+            // return response()->json(['schedulings' => $schedulings], 200);
+            return view('scheduling.index',compact('schedulings'));
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter agendamento'], 500);
         }
@@ -68,5 +69,5 @@ class SchedulingController extends Controller
                 'message' => 'Erro ao criar agendamento: ' . $e->getMessage(),
             ], 500);
         }
-    }
+    }  
 }

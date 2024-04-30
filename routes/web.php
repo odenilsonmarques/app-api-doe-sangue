@@ -10,14 +10,16 @@ use App\Http\Controllers\Api\{
     BloodCenterController,
     SchedulingController
 };
+
 use App\Http\Controllers\Site\{
     SiteController,
+    DashboardController
 };
 
 
 Route::get('/', [SiteController::class, 'index'])->name('index');
 
-// Route::get('/dashboard',[ControllerDashboard::class,'index'])->name('dashboard.index');
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
 
 
 //route scheduling
@@ -40,9 +42,9 @@ Route::get('/historics/create', [HistoricController::class, 'create'])->name('hi
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
