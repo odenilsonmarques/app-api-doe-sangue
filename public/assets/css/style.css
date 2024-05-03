@@ -10,6 +10,10 @@
     color: #B00C0C;
 }
 
+.logout{
+    color: yellow;
+}
+
 .navbar-expand-sm .navbar-nav .nav-link:hover{
     text-decoration: underline;
     color: #B00C0C;

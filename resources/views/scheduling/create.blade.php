@@ -16,20 +16,12 @@
                                 <div class="form-group">
                                     <label for="name"></label>
                                     <select name="user_id" class="form-select" required>
-                                        <option value="">Selecione</option>
-                                        @foreach ($users as $user)
-                                            <option value="{{ $user['id'] }}"
-                                                {{ old('user_id') == $user['id'] ? 'selected' : '' }}>
-                                                {{ $user['name'] }}</option>
-                                        @endforeach
-                                    </select>
+                                        <option value="{{ auth()->user()->id }}" selected>{{ auth()->user()->name }}</option>
+                                    </select>                                    
                                 </div>
                             </div>
                         </div>
                         {{-- <input type="hidden" name="user_id" value="{{ Auth::user()}}"> --}}
-
-
-                        
 
                         <div class="row mb-2">
                             <div class="col-md-12">

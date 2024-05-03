@@ -5,8 +5,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-
-                
                 <button type="button" class="btn btn-sm btn-new-donor mt-5">
                     <a href="{{route('bloodcenters.create')}}">Novo</a>
                 </button>
