@@ -33,14 +33,13 @@
                 </div>
             @else
                 <div class="row">
-                    <div class="col lg 6">
-                        <h3 class="mt-5">Ir para agendamento</h3>
-                        <a href="{{ route('schedulings.create') }}">Clique aqui</a>
+                    <div class="col-lg-6 my-5">
+                        <a href="{{ route('schedulings.create') }}" class="my-3 btn btn-link">Realizar novo agendamento</a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col lg 6">
-                        <h3 class="mt-5 text-center">Meus Agendamentos</h3>
+                    <div class="col-lg-6  shadow p-3 mb-5 bg-body rounded">
+                        <h3 class="mt-3 mb-5 text-center">Meus agendamentos</h3>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -60,8 +59,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col lg 6">
-                        <h3 class="mt-5">Minhas doação</h3>
+                    <div class="col-lg-6 shadow p-3 mb-5 bg-body rounded">
+                        <h3 class="mt-3 mb-5 text-center">Minhas doações</h3>
                         <table class="table table-striped">
                             <thead>
                                 <tr>

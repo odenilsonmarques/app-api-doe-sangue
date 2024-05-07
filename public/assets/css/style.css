@@ -69,3 +69,14 @@
     text-decoration: none;
 
 }
+.btn-link{
+    background-color: #B00C0C;
+    color: #E9E9EA;
+    text-decoration: none;
+}
+
+.btn-link:hover{
+    background-color: #E9E9EA;
+    color:   #B00C0C;
+    text-decoration: none;
+}
