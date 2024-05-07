@@ -16,29 +16,31 @@
         <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="{{asset('assets/img/logo.png')}}" alt="" width="40px" height="40px"><br>
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="" width="40px" height="40px"><br>
                     <span class="txt-logo">Doa +</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('login')}}">Entrar</a>
-                        </li> 
-
-
-                        <li class="nav-item logout">
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <x-dropdown-link :href="route('logout')"
+                        @if (Auth::check())
+                            <li class="nav-item logout">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                    {{ __('Sair') }}
-                                </x-dropdown-link>
-                            </form>
-                        </li>
+                                        {{ __('Sair') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Entrar</a>
+                            </li>
+                        @endif
                     </ul>
                 </nav>
             </div>
