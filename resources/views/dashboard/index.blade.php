@@ -32,6 +32,11 @@
                     </div>
                 </div>
             @else
+
+
+
+
+            
                 <div class="row">
                     <div class="col-lg-6 my-5">
                         <a href="{{ route('schedulings.create') }}" class="my-3 btn btn-link">Realizar novo agendamento</a>

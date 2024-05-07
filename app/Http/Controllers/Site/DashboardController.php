@@ -27,8 +27,9 @@ class DashboardController extends Controller
       
 
             $schedulingAlls = Scheduling::with('user', 'bloodCenter')->get();
+        // $schedulingAlls = Scheduling::with('user', 'bloodCenter')->latest()->get();
 
- 
+
             //  dd($historrics);
  
              // return response()->json(['schedulings' => $schedulings], 200);
