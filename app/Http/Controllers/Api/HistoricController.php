@@ -17,8 +17,8 @@ class HistoricController extends Controller
         try {
             $historics = Historic::all();
             // dd($historics);
-            return response()->json(['historics' => $historics, 200]);
-            // return view('historics.index', compact('historics'));
+            // return response()->json(['historics' => $historics, 200]);
+            return view('historics.index', compact('historics'));
         } catch (\Exception $e) {
             return response()->json(['error' => 'Erro ao obter agendamento'], 500);
         }
