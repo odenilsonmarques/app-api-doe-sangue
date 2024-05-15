@@ -80,3 +80,12 @@
     color:   #B00C0C;
     text-decoration: none;
 }
+
+.text-decoration-none{
+    color: #B00C0C;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline;
+    color: #B00C0C;
+}

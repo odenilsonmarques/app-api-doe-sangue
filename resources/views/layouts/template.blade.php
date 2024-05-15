@@ -26,10 +26,13 @@
                 <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         @if (Auth::check())
-                            <li class="nav-item logout">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item logout mt-2" style="color: black">
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <x-dropdown-link :href="route('logout')"
+                                    <x-dropdown-link :href="route('logout')" class="text-decoration-none"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                         {{ __('Sair') }}

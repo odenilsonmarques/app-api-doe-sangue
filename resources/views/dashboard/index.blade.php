@@ -7,7 +7,7 @@
 
             @if (auth()->user()->is_admin)
                 <div class="row justify-content-center">
-                    <h1 class="pt-5 text-center mb-4" style="font-size: 25px;color:#B00C0C">Dashboard</h1>
+                    <h1 class="pt-5 text-center mb-4" style="font-size: 25px;color:#B00C0C">Bem - vindo !</h1>
                     <div class="col-lg-4 shadow p-3 mb-4 bg-body rounded my-4 mx-5" style="max-height: 250px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#B00C0C"
                             class="bi bi-bag-heart-fill" viewBox="0 0 16 16">

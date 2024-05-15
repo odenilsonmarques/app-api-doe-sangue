@@ -16,7 +16,7 @@ class SchedulingController extends Controller
     public function getAllScheduling()
     {
         try {
-            $schedulings = Scheduling::all();
+            $schedulings = Scheduling::orderBy('scheduling_date', 'desc')->get();
             // return response()->json(['schedulings' => $schedulings], 200);
             return view('scheduling.index',compact('schedulings'));
         } catch (\Exception $e) {
