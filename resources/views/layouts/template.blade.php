@@ -12,8 +12,8 @@
 
 
 <body>
-    <header class="mb-5">
-        <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color:">
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark custom-header">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="{{ asset('assets/img/logo.png') }}" alt="" width="40px" height="40px"><br>
@@ -40,6 +40,15 @@
                                 </form>
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Como doar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contatos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Depoimentos</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Entrar</a>
                             </li>

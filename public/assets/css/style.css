@@ -1,13 +1,21 @@
+body {
+    padding-top: 100px; /* Ajuste conforme a altura do seu header */
+}
+
+.custom-header{
+    background-color: #B00C0C;
+}
 
 .txt-logo{
-    color:#B00C0C;
+    color:#fff;
     font-weight: bolder;
     font-size: 15px;
 }
 
 
 .navbar-expand-sm .navbar-nav .nav-link{
-    color: #B00C0C;
+    color: #fff;
+    font-weight: bold;
 }
 
 .logout{
@@ -16,7 +24,7 @@
 
 .navbar-expand-sm .navbar-nav .nav-link:hover{
     text-decoration: underline;
-    color: #B00C0C;
+    color: #E9E9EA;
 }
 
 
@@ -54,8 +62,14 @@
     text-decoration: none;
 }  
 
+.hero-container{
+    background-color: #B00C0C;
+   
+}
+
 .hero-text h1{
     color:#B00C0C;
+
     
 }
 

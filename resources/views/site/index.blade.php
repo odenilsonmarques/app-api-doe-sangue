@@ -2,22 +2,20 @@
 @section('title', 'Home')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="hero row align-items-center mt-5">
-                    <div class="col-lg-6 hero-text">
-                        <h1 class="mt-5">Salve vidas doando sangue regularmente</h1>
-                        <p class="mt-3">Doe sangue, a vida agradece.</p>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <img src="{{ 'assets/img/source_1.gif' }}" alt="" class="" width="350"
-                            height="">
-                    </div>
-                </div>
+
+    <div class="container">
+        <div class="row align-items-center" style="border:1px solid red">
+            <div class="col-lg-6 hero-text">
+                <h1 class="mt-2">Salve vidas doando sangue regularmente</h1>
+                <p>Doe sangue, a vida agradece.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ 'assets/img/doa.png' }}" alt="" class="img-fluid" height="400">
             </div>
         </div>
     </div>
+
+
 
     <div class="container">
         <div class="row texts-features">
@@ -26,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title mt-3">
-                            <a href="{{ route('register') }}" 
+                            <a href="{{ route('register') }}"
                                 class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                                 Agendar criando uma conta
                             </a>
