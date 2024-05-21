@@ -69,8 +69,7 @@ body {
 
 .hero-text h1{
     color:#B00C0C;
-
-    
+    font-size: 45px;
 }
 
 .hero-text p{
@@ -102,4 +101,8 @@ body {
 .text-decoration-none:hover {
     text-decoration: underline;
     color: #B00C0C;
+}
+
+.custom-button{
+    background-color: #B00C0C;
 }

@@ -4,13 +4,14 @@
 @section('content')
 
     <div class="container">
-        <div class="row align-items-center" style="border:1px solid red">
-            <div class="col-lg-6 hero-text">
-                <h1 class="mt-2">Salve vidas doando sangue regularmente</h1>
+        <div class="row">
+            <div class="col-lg-6 hero-text mt-5">
+                <h1 class="">Salve vidas doando sangue regularmente</h1>
                 <p>Doe sangue, a vida agradece.</p>
+                <button type="button" class="btn btn-danger custom-button">Agendar doação</button>
             </div>
-            <div class="col-lg-6">
-                <img src="{{ 'assets/img/doa.png' }}" alt="" class="img-fluid" height="400">
+            <div class="col-lg-6 ml-5 d-flex justify-content-end">
+                <img src="{{ 'assets/img/doa.png' }}" alt="" class="img-fluid" style="height: 400px; object-fit: cover;">
             </div>
         </div>
     </div>
