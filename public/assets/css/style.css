@@ -63,13 +63,14 @@ body {
 }  
 
 .hero-container{
-    background-color: #B00C0C;
+    animation: fadeInLeft 2s;
    
 }
 
 .hero-text h1{
     color:#B00C0C;
     font-size: 45px;
+    margin-top: 80px;
 }
 
 .hero-text p{
@@ -105,4 +106,21 @@ body {
 
 .custom-button{
     background-color: #B00C0C;
+}
+
+/* css padão para aplicação do efeito de transação */
+@keyframes fadeInLeft
+{
+  0%{
+      opacity:0;
+      /* translateX reposiciona um elemento na direção horizontal e/ou vertical */
+      -webkit-transform:translateX(-100px); 
+      -ms-transform:translateX(-100px);
+      transform:translateX(-100px)}
+  100%{
+      opacity:1;
+      -webkit-transform:translateX(0);
+      -ms-transform:translateX(0);
+      transform:translateX(0)
+  }
 }
