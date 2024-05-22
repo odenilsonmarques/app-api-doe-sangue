@@ -78,8 +78,8 @@ body {
     font-weight: bold;
 }
 
-.texts-features h5 a{ 
-    color:#B00C0C;
+.texts-features h5{ 
+    color:#111;
     text-decoration: none;
 
 }
@@ -107,6 +107,20 @@ body {
 .custom-button{
     background-color: #B00C0C;
 }
+
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaçamento vertical entre os itens */
+}
+.list-item svg {
+    margin-right: 10px; /* Espaçamento horizontal entre o ícone e o texto */
+}
+
+
+
+
 
 /* css padão para aplicação do efeito de transação */
 @keyframes fadeInLeft
